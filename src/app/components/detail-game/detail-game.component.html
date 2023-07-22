@@ -1,0 +1,44 @@
+<ng-template #content let-c="close" let-d="dismiss">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>Hello, World!</p>
+	</div>
+	
+</ng-template>
+
+
+
+	<div class="justify-content-center text-center flex-wrap">
+        <div class="card mb-3">
+            <div class="card-header p-0">
+                <img src={{imageDet}} class="card-img-top" alt="Wild Landscape"/>
+            </div>
+            
+            <div class="card-body justify-content">
+                <h3 class="card-title"><p><a href={{urlDet}} target="_blank">{{titleDet}} </a></p> </h3>
+                <h6 class="card-subtitle mb-2 text-muted">{{categoryDet }}</h6>
+                <h4 class="card-subtitle mb-2 text-muted">{{plataformaDet }}</h4>
+                <p class="card-text">
+                    {{descriptionDet}}
+                </p>
+                
+              
+    
+            </div>
+            <div class="card-footer">
+                <p class="card-text">
+                    <small class="text-muted">Creador: {{creadorDet}}</small><br>
+                    <small class="text-muted">Desarrollador: {{developerDet}}</small><br>
+                    <small class="text-muted">Fecha de Publicación: {{dateDet}}</small>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+      
+
+
+

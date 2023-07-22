@@ -1,0 +1,50 @@
+<style>
+    
+</style>
+
+
+<div>
+
+    
+   
+    <br>
+    <div class="container" style="width: 80%">
+      <form class="form-inline">
+        <input  #searchInput type="text"  class="form-control" placeholder="Busqueda por categoria: Strategy ....">
+        
+      </form>
+    
+     
+    </div>
+    <br>
+    <div class="d-flex justify-content-center text-center flex-wrap" >
+            <div class="card mx-2 my-2 shadow rounded" style="width: 18rem;" *ngFor="let item of data | paginate: { itemsPerPage: 6, currentPage: page }" >
+                <div class="card-header p-0">
+                    <img src="{{ item.thumbnail }}" class="card-img-top" alt="...">
+                </div>
+
+                
+                <div class="card-body">
+                <h5 class="card-title">{{item.id}}-{{ item.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{item.genre }}</h6>
+                <p class="card-text">{{item.short_description}}</p>
+                
+                </div>
+
+                <div class="card-footer">
+                    <a class="btn btn-primary" (click)="verJuego(item)">Ver Juego</a>
+                </div>
+
+            </div>
+    
+    </div>
+</div>
+
+<div *ngIf="status === 'loading'">Loading...</div>
+<div *ngIf="status === 'error'">Though luck! Come back tomorrow</div>
+
+<div class="d-flex justify-content-center text-center flex-wrap">
+    <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
+nextLabel="Siguiente"></pagination-controls>
+</div>
+
